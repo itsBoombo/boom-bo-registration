@@ -12,12 +12,13 @@
       margin: 0;
       padding: 0;
       direction: rtl;
-      height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
       flex-direction: column;
+      height: 100vh;
     }
+
     .container {
       display: flex;
       flex-direction: column;
@@ -30,19 +31,23 @@
       max-width: 800px;
       box-sizing: border-box;
       margin-bottom: 40px;
+      min-height: 80vh; /* Adjusted to ensure content fills the screen */
     }
+
     h2 {
       text-align: center;
       color: #00BFA6;
       font-size: 36px;
       margin-bottom: 25px;
     }
+
     label {
       display: block;
       margin-top: 15px;
       font-size: 18px;
       color: #333;
     }
+
     input, select, textarea {
       width: 100%;
       padding: 12px;
@@ -53,10 +58,12 @@
       margin-top: 5px;
       transition: all 0.3s ease;
     }
+
     input:focus, select:focus, textarea:focus {
       border-color: #FFD66B;
       box-shadow: 0 0 10px rgba(255, 214, 107, 0.7);
     }
+
     .art-tools {
       margin-top: 15px;
       border: 2px dashed #FFD66B;
@@ -72,55 +79,6 @@
       margin-bottom: 10px;
       font-size: 18px;
       color: #333;
-      position: relative;
-      padding-left: 30px;
-      cursor: pointer;
-    }
-
-    .art-tools input[type="checkbox"] {
-      position: absolute;
-      left: 0;
-      top: 50%;
-      transform: translateY(-50%);
-      opacity: 0;
-      cursor: pointer;
-    }
-
-    .art-tools input[type="checkbox"]:checked + span {
-      background-color: #00BFA6;
-      color: #fff;
-      border-color: #00BFA6;
-    }
-
-    .art-tools input[type="checkbox"]:checked + span::before {
-      content: '\f00c';
-      font-family: 'Font Awesome 5 Free';
-      font-weight: 900;
-      color: white;
-      position: absolute;
-      left: 8px;
-      top: 50%;
-      transform: translateY(-50%);
-    }
-
-    .art-tools span {
-      display: inline-block;
-      padding: 10px 30px;
-      background-color: #f0f0f0;
-      border: 2px solid #ddd;
-      border-radius: 10px;
-      font-size: 16px;
-      position: relative;
-      transition: all 0.3s ease;
-    }
-
-    .art-tools input[type="checkbox"]:hover + span {
-      border-color: #FFD66B;
-    }
-
-    .art-tools input[type="checkbox"]:checked + span {
-      border-color: #FFD66B;
-      background-color: #00BFA6;
     }
 
     button {
@@ -135,6 +93,7 @@
       cursor: pointer;
       transition: background-color 0.3s ease, transform 0.3s ease;
     }
+
     button:hover {
       background: linear-gradient(to left, #00BFA6, #FFD66B);
       transform: translateY(-5px);
@@ -151,12 +110,14 @@
       font-size: 16px;
       color: #333;
     }
+
     footer a {
       color: #00BFA6;
       text-decoration: none;
       margin: 0 10px;
       transition: color 0.3s ease;
     }
+
     footer a:hover {
       color: #FFD66B;
     }
