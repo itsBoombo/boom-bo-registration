@@ -11,12 +11,15 @@
       margin: 0;
       padding: 0;
       direction: rtl;
-      height: 100vh; /* ارتفاع کل صفحه برای قرارگیری در وسط */
+      height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
     }
     .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center; /* تراز کردن محتوا در وسط */
       max-width: 600px;
       background: #ffffffdd;
       padding: 30px;
@@ -52,6 +55,8 @@
       padding: 15px;
       border-radius: 12px;
       background-color: #fffaf0;
+      width: 100%; /* اطمینان از عرض کامل */
+      box-sizing: border-box;
     }
     .art-tools label {
       display: inline-block;
