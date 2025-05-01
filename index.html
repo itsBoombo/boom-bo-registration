@@ -2,7 +2,6 @@
 <html lang="fa" dir="rtl">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- این خط را اضافه کنید -->
   <title>فرم ثبت‌نام | آموزشگاه نقاشی بومبو</title>
   <link href="https://fonts.googleapis.com/css2?family=Lalezar&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- برای آیکن‌ها -->
@@ -13,41 +12,37 @@
       margin: 0;
       padding: 0;
       direction: rtl;
+      height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
       flex-direction: column;
-      height: 100vh;
     }
-
     .container {
       display: flex;
       flex-direction: column;
       align-items: center;
+      max-width: 600px;
       background: #ffffffdd;
       padding: 30px;
       border-radius: 20px;
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
       width: 100%;
-      max-width: 900px; /* افزایش حداکثر عرض برای دسکتاپ */
       box-sizing: border-box;
-      margin-bottom: 40px;
+      margin-bottom: 40px; /* فاصله بین فرم و فوتر */
     }
-
     h2 {
       text-align: center;
       color: #00BFA6;
       font-size: 36px;
       margin-bottom: 25px;
     }
-
     label {
       display: block;
       margin-top: 15px;
       font-size: 18px;
       color: #333;
     }
-
     input, select, textarea {
       width: 100%;
       padding: 12px;
@@ -58,12 +53,10 @@
       margin-top: 5px;
       transition: all 0.3s ease;
     }
-
     input:focus, select:focus, textarea:focus {
       border-color: #FFD66B;
       box-shadow: 0 0 10px rgba(255, 214, 107, 0.7);
     }
-
     .art-tools {
       margin-top: 15px;
       border: 2px dashed #FFD66B;
@@ -79,6 +72,55 @@
       margin-bottom: 10px;
       font-size: 18px;
       color: #333;
+      position: relative;
+      padding-left: 30px;
+      cursor: pointer;
+    }
+
+    .art-tools input[type="checkbox"] {
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      opacity: 0;
+      cursor: pointer;
+    }
+
+    .art-tools input[type="checkbox"]:checked + span {
+      background-color: #00BFA6;
+      color: #fff;
+      border-color: #00BFA6;
+    }
+
+    .art-tools input[type="checkbox"]:checked + span::before {
+      content: '\f00c';
+      font-family: 'Font Awesome 5 Free';
+      font-weight: 900;
+      color: white;
+      position: absolute;
+      left: 8px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .art-tools span {
+      display: inline-block;
+      padding: 10px 30px;
+      background-color: #f0f0f0;
+      border: 2px solid #ddd;
+      border-radius: 10px;
+      font-size: 16px;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    .art-tools input[type="checkbox"]:hover + span {
+      border-color: #FFD66B;
+    }
+
+    .art-tools input[type="checkbox"]:checked + span {
+      border-color: #FFD66B;
+      background-color: #00BFA6;
     }
 
     button {
@@ -93,12 +135,31 @@
       cursor: pointer;
       transition: background-color 0.3s ease, transform 0.3s ease;
     }
-
     button:hover {
       background: linear-gradient(to left, #00BFA6, #FFD66B);
       transform: translateY(-5px);
     }
-
+    /* Media Queries for responsive design */
+    @media (max-width: 768px) {
+      .container {
+        padding: 20px;
+        margin: 20px;
+      }
+      h2 {
+        font-size: 28px;
+      }
+      label {
+        font-size: 16px;
+      }
+      input, select, textarea {
+        font-size: 14px;
+        padding: 10px;
+      }
+      .art-tools label {
+        display: block;
+        margin-bottom: 8px;
+      }
+    }
     /* فوتر */
     footer {
       width: 100%;
@@ -110,92 +171,14 @@
       font-size: 16px;
       color: #333;
     }
-
     footer a {
       color: #00BFA6;
       text-decoration: none;
       margin: 0 10px;
       transition: color 0.3s ease;
     }
-
     footer a:hover {
       color: #FFD66B;
-    }
-
-    /* Media Queries for responsive design */
-    @media (max-width: 1024px) {
-      .container {
-        padding: 20px;
-        margin: 20px;
-      }
-      h2 {
-        font-size: 30px;
-      }
-      label {
-        font-size: 16px;
-      }
-      input, select, textarea {
-        font-size: 14px;
-        padding: 10px;
-      }
-      .art-tools label {
-        font-size: 16px;
-      }
-    }
-
-    @media (max-width: 768px) {
-      body {
-        padding: 10px;
-      }
-      .container {
-        padding: 15px;
-        margin: 10px;
-      }
-      h2 {
-        font-size: 24px;
-      }
-      label {
-        font-size: 14px;
-      }
-      input, select, textarea {
-        font-size: 14px;
-        padding: 8px;
-      }
-      .art-tools {
-        padding: 10px;
-      }
-      .art-tools span {
-        font-size: 14px;
-        padding: 8px 20px;
-      }
-      button {
-        font-size: 18px;
-        padding: 12px;
-      }
-    }
-
-    @media (max-width: 480px) {
-      h2 {
-        font-size: 22px;
-      }
-      label {
-        font-size: 14px;
-      }
-      input, select, textarea {
-        font-size: 12px;
-        padding: 6px;
-      }
-      .art-tools {
-        padding: 8px;
-      }
-      .art-tools span {
-        font-size: 12px;
-        padding: 6px 18px;
-      }
-      button {
-        font-size: 16px;
-        padding: 10px;
-      }
     }
   </style>
 </head>
@@ -203,7 +186,7 @@
   <div class="container">
     <h2>آموزشگاه نقاشی بومبو</h2>
     <form action="https://formspree.io/f/mwpoleoz" method="POST">
-      <label for="name"><i class="fa fa-user"></i> نام و نام خانوادگی (اجباری):</label>
+      <label for="name"><i class="fa fa-user"></i> نام و نام خانوادگی:</label>
       <input type="text" id="name" name="name" required>
 
       <label for="age"><i class="fa fa-calendar"></i> سن:</label>
@@ -213,13 +196,12 @@
         <option value="17+">17 سال و بالاتر</option>
       </select>
 
-      <label for="phone"><i class="fa fa-phone"></i> شماره تماس (اجباری):</label>
+      <label for="phone"><i class="fa fa-phone"></i> شماره تماس:</label>
       <input type="tel" id="phone" name="phone" required>
 
       <label for="message"><i class="fa fa-comment"></i> توضیحات (اختیاری):</label>
       <textarea id="message" name="message" rows="3"></textarea>
 
-      <p>موارد مورد علاقه:</p>
       <div class="art-tools">
         <label><input type="checkbox" name="tools" value="گواش"><span>گواش</span></label>
         <label><input type="checkbox" name="tools" value="مداد رنگی"><span>مداد رنگی</span></label>
