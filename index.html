@@ -27,7 +27,7 @@
       border-radius: 20px;
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
       width: 100%;
-      max-width: 800px; /* حداکثر عرض برای دسکتاپ */
+      max-width: 800px;
       box-sizing: border-box;
       margin-bottom: 40px;
     }
@@ -242,7 +242,7 @@
   <div class="container">
     <h2>آموزشگاه نقاشی بومبو</h2>
     <form action="https://formspree.io/f/mwpoleoz" method="POST">
-      <label for="name"><i class="fa fa-user"></i> نام و نام خانوادگی:</label>
+      <label for="name"><i class="fa fa-user"></i> نام و نام خانوادگی (اجباری):</label>
       <input type="text" id="name" name="name" required>
 
       <label for="age"><i class="fa fa-calendar"></i> سن:</label>
@@ -252,12 +252,13 @@
         <option value="17+">17 سال و بالاتر</option>
       </select>
 
-      <label for="phone"><i class="fa fa-phone"></i> شماره تماس:</label>
+      <label for="phone"><i class="fa fa-phone"></i> شماره تماس (اجباری):</label>
       <input type="tel" id="phone" name="phone" required>
 
       <label for="message"><i class="fa fa-comment"></i> توضیحات (اختیاری):</label>
       <textarea id="message" name="message" rows="3"></textarea>
 
+      <p>موارد مورد علاقه:</p>
       <div class="art-tools">
         <label><input type="checkbox" name="tools" value="گواش"><span>گواش</span></label>
         <label><input type="checkbox" name="tools" value="مداد رنگی"><span>مداد رنگی</span></label>
