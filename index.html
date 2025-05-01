@@ -139,27 +139,7 @@
       background: linear-gradient(to left, #00BFA6, #FFD66B);
       transform: translateY(-5px);
     }
-    /* Media Queries for responsive design */
-    @media (max-width: 768px) {
-      .container {
-        padding: 20px;
-        margin: 20px;
-      }
-      h2 {
-        font-size: 28px;
-      }
-      label {
-        font-size: 16px;
-      }
-      input, select, textarea {
-        font-size: 14px;
-        padding: 10px;
-      }
-      .art-tools label {
-        display: block;
-        margin-bottom: 8px;
-      }
-    }
+
     /* فوتر */
     footer {
       width: 100%;
@@ -179,6 +159,82 @@
     }
     footer a:hover {
       color: #FFD66B;
+    }
+
+    /* Media Queries for responsive design */
+    @media (max-width: 1024px) {
+      .container {
+        padding: 20px;
+        margin: 20px;
+      }
+      h2 {
+        font-size: 30px;
+      }
+      label {
+        font-size: 16px;
+      }
+      input, select, textarea {
+        font-size: 14px;
+        padding: 10px;
+      }
+      .art-tools label {
+        font-size: 16px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      body {
+        padding: 10px;
+      }
+      .container {
+        padding: 15px;
+        margin: 10px;
+      }
+      h2 {
+        font-size: 24px;
+      }
+      label {
+        font-size: 14px;
+      }
+      input, select, textarea {
+        font-size: 14px;
+        padding: 8px;
+      }
+      .art-tools {
+        padding: 10px;
+      }
+      .art-tools span {
+        font-size: 14px;
+        padding: 8px 20px;
+      }
+      button {
+        font-size: 18px;
+        padding: 12px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      h2 {
+        font-size: 22px;
+      }
+      label {
+        font-size: 14px;
+      }
+      input, select, textarea {
+        font-size: 12px;
+        padding: 6px;
+      }
+      .art-tools {
+        padding: 8px;
+      }
+      .art-tools span {
+        font-size: 12px;
+        padding: 6px 18px;
+      }
+      button {
+        font-size: 16px;
+        padding: 10px;
+      }
     }
   </style>
 </head>
