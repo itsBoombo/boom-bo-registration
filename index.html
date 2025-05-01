@@ -20,7 +20,7 @@
     .container {
       display: flex;
       flex-direction: column;
-      align-items: center; /* تراز کردن محتوا در وسط */
+      align-items: center;
       max-width: 600px;
       background: #ffffffdd;
       padding: 30px;
@@ -41,7 +41,7 @@
       font-size: 18px;
       color: #333;
     }
-    input, textarea {
+    input, select, textarea {
       width: 100%;
       padding: 12px;
       border: 2px solid #00BFA6;
@@ -49,11 +49,11 @@
       font-family: inherit;
       font-size: 16px;
       margin-top: 5px;
-      transition: all 0.3s ease; /* انیمیشن تغییرات */
+      transition: all 0.3s ease;
     }
-    input:focus, textarea:focus {
+    input:focus, select:focus, textarea:focus {
       border-color: #FFD66B;
-      box-shadow: 0 0 10px rgba(255, 214, 107, 0.7); /* ایجاد افکت روشن در هنگام فوکوس */
+      box-shadow: 0 0 10px rgba(255, 214, 107, 0.7);
     }
     .art-tools {
       margin-top: 15px;
@@ -61,7 +61,7 @@
       padding: 15px;
       border-radius: 12px;
       background-color: #fffaf0;
-      width: 100%; /* اطمینان از عرض کامل */
+      width: 100%;
       box-sizing: border-box;
     }
     .art-tools label {
@@ -83,7 +83,7 @@
     }
     button:hover {
       background: linear-gradient(to left, #00BFA6, #FFD66B);
-      transform: translateY(-5px); /* ایجاد افکت شناور */
+      transform: translateY(-5px);
     }
     /* Media Queries for responsive design */
     @media (max-width: 768px) {
@@ -97,7 +97,7 @@
       label {
         font-size: 16px;
       }
-      input, textarea {
+      input, select, textarea {
         font-size: 14px;
         padding: 10px;
       }
@@ -105,6 +105,22 @@
         display: block;
         margin-bottom: 8px;
       }
+    }
+    /* فوتر */
+    footer {
+      margin-top: 30px;
+      text-align: center;
+      font-size: 16px;
+      color: #333;
+    }
+    footer a {
+      color: #00BFA6;
+      text-decoration: none;
+      margin: 0 10px;
+      transition: color 0.3s ease;
+    }
+    footer a:hover {
+      color: #FFD66B;
     }
   </style>
 </head>
@@ -116,7 +132,12 @@
       <input type="text" id="name" name="name" required>
 
       <label for="age"><i class="fa fa-calendar"></i> سن:</label>
-      <input type="number" id="age" name="age" required>
+      <select id="age" name="age" required>
+        <option value="18-25">18-25 سال</option>
+        <option value="26-35">26-35 سال</option>
+        <option value="36-45">36-45 سال</option>
+        <option value="46+">46 سال و بالاتر</option>
+      </select>
 
       <label for="phone"><i class="fa fa-phone"></i> شماره تماس:</label>
       <input type="tel" id="phone" name="phone" required>
@@ -137,5 +158,13 @@
       <button type="submit">ارسال فرم</button>
     </form>
   </div>
+
+  <!-- فوتر با اطلاعات تماس -->
+  <footer>
+    <p>برای اطلاعات بیشتر با ما تماس بگیرید:</p>
+    <p>شماره تماس: <a href="tel:+989011139210">09011139210</a></p>
+    <p>اینستاگرام: <a href="https://www.instagram.com/itsboombo" target="_blank">itsboombo</a></p>
+    <p>تلگرام: <a href="https://www.t.me/itsboombo" target="_blank">itsboombo</a></p>
+  </footer>
 </body>
 </html>
