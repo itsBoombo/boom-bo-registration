@@ -66,11 +66,63 @@
       width: 100%;
       box-sizing: border-box;
     }
+
     .art-tools label {
-      display: inline-block;
-      margin-right: 15px;
-      font-size: 16px;
+      display: block;
+      margin-bottom: 10px;
+      font-size: 18px;
+      color: #333;
+      position: relative;
+      padding-left: 30px;
+      cursor: pointer;
     }
+
+    .art-tools input[type="checkbox"] {
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      opacity: 0;
+      cursor: pointer;
+    }
+
+    .art-tools input[type="checkbox"]:checked + span {
+      background-color: #00BFA6;
+      color: #fff;
+      border-color: #00BFA6;
+    }
+
+    .art-tools input[type="checkbox"]:checked + span::before {
+      content: '\f00c';
+      font-family: 'Font Awesome 5 Free';
+      font-weight: 900;
+      color: white;
+      position: absolute;
+      left: 8px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .art-tools span {
+      display: inline-block;
+      padding: 10px 30px;
+      background-color: #f0f0f0;
+      border: 2px solid #ddd;
+      border-radius: 10px;
+      font-size: 16px;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    .art-tools input[type="checkbox"]:hover + span {
+      border-color: #FFD66B;
+    }
+
+    .art-tools input[type="checkbox"]:checked + span {
+      border-color: #FFD66B;
+      background-color: #00BFA6;
+    }
+
     button {
       margin-top: 25px;
       padding: 15px;
@@ -151,11 +203,11 @@
       <textarea id="message" name="message" rows="3"></textarea>
 
       <div class="art-tools">
-        <label><input type="checkbox" name="tools" value="گواش"> گواش</label>
-        <label><input type="checkbox" name="tools" value="مداد رنگی"> مداد رنگی</label>
-        <label><input type="checkbox" name="tools" value="آبرنگ"> آبرنگ</label>
-        <label><input type="checkbox" name="tools" value="گچ پاستل"> گچ پاستل</label>
-        <label><input type="checkbox" name="tools" value="سیاه قلم"> سیاه قلم</label>
+        <label><input type="checkbox" name="tools" value="گواش"><span>گواش</span></label>
+        <label><input type="checkbox" name="tools" value="مداد رنگی"><span>مداد رنگی</span></label>
+        <label><input type="checkbox" name="tools" value="آبرنگ"><span>آبرنگ</span></label>
+        <label><input type="checkbox" name="tools" value="گچ پاستل"><span>گچ پاستل</span></label>
+        <label><input type="checkbox" name="tools" value="سیاه قلم"><span>سیاه قلم</span></label>
       </div>
 
       <input type="hidden" name="_redirect" value="success.html">
