@@ -127,6 +127,10 @@
       cursor: pointer;
       transition: background-color 0.3s ease, transform 0.3s ease;
     }
+    button:disabled {
+      background: gray;
+      cursor: not-allowed;
+    }
     button:hover {
       background: linear-gradient(to left, #00BFA6, #FFD66B);
       transform: translateY(-5px);
@@ -176,20 +180,20 @@
   <div class="container">
     <h2>آموزشگاه نقاشی بومبو</h2>
     <form id="signup-form">
-      <label for="name"><i class="fa fa-user"></i> نام و نام خانوادگی:</label>
+      <label for="name" aria-label="نام و نام خانوادگی"><i class="fa fa-user"></i> نام و نام خانوادگی:</label>
       <input type="text" id="name" name="name" required autocomplete="name">
 
-      <label for="age"><i class="fa fa-calendar"></i> سن:</label>
+      <label for="age" aria-label="سن"><i class="fa fa-calendar"></i> سن:</label>
       <select id="age" name="age" required>
         <option value="8-11">8 تا 11 سال</option>
         <option value="12-16">12 تا 16 سال</option>
         <option value="17+">17 سال و بالاتر</option>
       </select>
 
-      <label for="phone"><i class="fa fa-phone"></i> شماره تماس:</label>
+      <label for="phone" aria-label="شماره تماس"><i class="fa fa-phone"></i> شماره تماس:</label>
       <input type="tel" id="phone" name="phone" required pattern="09[0-9]{9}" title="مثال: 09123456789" autocomplete="tel">
 
-      <label for="message"><i class="fa fa-comment"></i> توضیحات (اختیاری):</label>
+      <label for="message" aria-label="توضیحات (اختیاری)"><i class="fa fa-comment"></i> توضیحات (اختیاری):</label>
       <textarea id="message" name="message" rows="3"></textarea>
 
       <div class="art-tools">
@@ -234,6 +238,8 @@
 
       const form = event.target;
       const formData = new FormData(form);
+      const submitButton = form.querySelector('button');
+      submitButton.disabled = true;
 
       try {
         const response = await fetch('https://formspree.io/f/mwpoleoz', {
@@ -252,6 +258,8 @@
       } catch (error) {
         alert('مشکلی در ارتباط با سرور رخ داد.');
         console.error(error);
+      } finally {
+        submitButton.disabled = false;
       }
     });
   </script>
