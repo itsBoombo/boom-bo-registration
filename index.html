@@ -175,7 +175,7 @@
 <body>
   <div class="container">
     <h2>آموزشگاه نقاشی بومبو</h2>
-    <form action="https://formspree.io/f/mwpoleoz" method="POST">
+    <form id="signup-form">
       <label for="name"><i class="fa fa-user"></i> نام و نام خانوادگی:</label>
       <input type="text" id="name" name="name" required autocomplete="name">
 
@@ -215,7 +215,6 @@
         </label>
       </div>
 
-      <input type="hidden" name="_redirect" value="success.html">
       <button type="submit">ارسال فرم</button>
     </form>
   </div>
@@ -228,5 +227,33 @@
       <p>تلگرام: <a href="https://www.t.me/itsboombo" target="_blank">itsboombo</a></p>
     </div>
   </footer>
+
+  <script>
+    document.getElementById('signup-form').addEventListener('submit', async function(event) {
+      event.preventDefault();
+
+      const form = event.target;
+      const formData = new FormData(form);
+
+      try {
+        const response = await fetch('https://formspree.io/f/mwpoleoz', {
+          method: 'POST',
+          body: formData,
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+
+        if (response.ok) {
+          window.location.href = 'success.html';
+        } else {
+          alert('خطا در ارسال فرم. لطفاً دوباره تلاش کنید.');
+        }
+      } catch (error) {
+        alert('مشکلی در ارتباط با سرور رخ داد.');
+        console.error(error);
+      }
+    });
+  </script>
 </body>
 </html>
