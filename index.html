@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>فرم ثبت‌نام | آموزشگاه نقاشی بومبو</title>
   <link href="https://fonts.googleapis.com/css2?family=Lalezar&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- برای آیکن‌ها -->
   <style>
     body {
       font-family: 'Lalezar', cursive;
@@ -48,6 +49,11 @@
       font-family: inherit;
       font-size: 16px;
       margin-top: 5px;
+      transition: all 0.3s ease; /* انیمیشن تغییرات */
+    }
+    input:focus, textarea:focus {
+      border-color: #FFD66B;
+      box-shadow: 0 0 10px rgba(255, 214, 107, 0.7); /* ایجاد افکت روشن در هنگام فوکوس */
     }
     .art-tools {
       margin-top: 15px;
@@ -67,16 +73,17 @@
       margin-top: 25px;
       padding: 15px;
       width: 100%;
-      background-color: #00BFA6;
+      background: linear-gradient(to right, #00BFA6, #FFD66B);
       color: white;
       font-size: 20px;
       border: none;
       border-radius: 8px;
       cursor: pointer;
-      transition: background-color 0.3s ease;
+      transition: background-color 0.3s ease, transform 0.3s ease;
     }
     button:hover {
-      background-color: #009e8f;
+      background: linear-gradient(to left, #00BFA6, #FFD66B);
+      transform: translateY(-5px); /* ایجاد افکت شناور */
     }
     /* Media Queries for responsive design */
     @media (max-width: 768px) {
@@ -105,16 +112,16 @@
   <div class="container">
     <h2>آموزشگاه نقاشی بومبو</h2>
     <form action="https://formspree.io/f/mwpoleoz" method="POST">
-      <label for="name">نام و نام خانوادگی:</label>
+      <label for="name"><i class="fa fa-user"></i> نام و نام خانوادگی:</label>
       <input type="text" id="name" name="name" required>
 
-      <label for="age">سن:</label>
+      <label for="age"><i class="fa fa-calendar"></i> سن:</label>
       <input type="number" id="age" name="age" required>
 
-      <label for="phone">شماره تماس:</label>
+      <label for="phone"><i class="fa fa-phone"></i> شماره تماس:</label>
       <input type="tel" id="phone" name="phone" required>
 
-      <label for="message">توضیحات (اختیاری):</label>
+      <label for="message"><i class="fa fa-comment"></i> توضیحات (اختیاری):</label>
       <textarea id="message" name="message" rows="3"></textarea>
 
       <div class="art-tools">
